@@ -1,0 +1,131 @@
+:root{
+    --bg-primary: hsl(30, 38%, 92%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-dark-cyan: hsl(228, 12%, 48%);
+    --color-green: #467302;
+    --card-width: 580px;
+    --card-height: 470px;
+    --border-card: .8rem;
+    --font-1:'Montserrat', sans-serif;
+    --font-2:'Fraunces', serif;
+    --font-text: 14px;
+}
+
+body{
+    background-color: var(--bg-primary);
+    display: flex;
+    height: calc(105vh - 2rem);
+    flex-direction: column;
+}
+
+/* Card */
+.card{
+    position: relative;
+    background-color: var(--color-white);
+    width: 95%;
+    height: 95%;
+    border-radius: var(--border-card);
+    margin: auto;
+    display: grid;
+    overflow: hidden;
+}
+@media (min-width: 375px) {
+    .card{
+        grid-template-columns: repeat( 2, 1fr );
+        max-width: var(--card-width);
+        max-height: var(--card-height);
+    }
+}
+.card__img{
+    display: inline-block;
+    width: 100%;
+    max-height: 18rem;
+    object-fit: cover;
+}
+@media (min-width: 375px) {
+    .card__img{
+        height: 100%;
+        max-height: 100%;
+    }
+}
+
+/* card container paragraph */
+.card__paragraph{
+    height: 100%;
+    padding: 0 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 375px) {
+    .card__paragraph{
+        padding: 1.6rem 1.2rem;
+
+    }
+}
+.card__subtitle{
+    font-family: var(--font-1);
+    font-family: 500;
+    color: var(--color-dark-cyan);
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+.card__title{
+    margin: 0;
+    font-family: var(--font-2);
+    font-weight: 700;
+    opacity: .8;
+}
+@media (min-width: 375px) {
+    .card__title{
+        margin-top: .6rem;
+        margin-bottom: .5rem;
+    }
+}
+.card__text{
+    line-height: 1.7;
+    margin: 0;
+    font-family: var(--font-1);
+    color: var(--color-dark-cyan);
+    font-size: var(--font-text);
+}
+.card__prices{
+    display: flex;
+    align-items: center;
+}
+.card__price{
+    padding-top: 1.5rem;
+    font-family: var(--font-2);
+    font-size: 1.7rem;
+    color: var(--color-green);
+
+}
+.card__price-modify{
+    color: var(--color-dark-cyan);
+    margin-left: .8rem;
+    font-size: 1.1rem;
+    text-decoration:line-through ;
+}
+.card__btn{
+    background-color: var(--color-green);
+    font-weight: var(--font-2);
+    font-weight: 700;
+    color: white;
+    padding: 12px 4px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.card__btn:hover{
+    transition: ease .4s;
+    background-color: #477009b2;
+}
+/* Retoques para breackpoint */
+@media (max-width: 480px ) {
+    .card__title{
+        font-size: 1.8rem;
+    }
+    .card__subtitle{
+        font-size: 1.2rem;
+    }
+
+}
